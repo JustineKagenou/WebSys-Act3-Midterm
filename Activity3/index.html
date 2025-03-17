@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini To do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <h1>Activity3 Mini To do List App</h1>
+
+    <ul id="main-List" >
+    </ul>
+    
+    <input class="input" type="text">
+    <button onclick="btnAdd()">Add Task</button>
+
+
+    <script>
+        function btnAdd() {
+
+            const inputValue = document.querySelector('.input').value;
+            
+            const newTask = document.createElement('li');   
+            
+            newTask.innerText = inputValue;
+            
+            document.getElementById("main-List").appendChild(newTask);      
+            
+            document.querySelector('.input').value = '';
+        }   
+
+        function removeItem()
+        {
+           let list = document.getElementById('main-List');
+           if(list.lastElementChild){
+            list.lastElementChild.remove();
+           }
+        }
+
+        function changeColor(){
+            let button = document.getElementById('myButton')
+            button.style.innerText = 'violet';
+            button.innetText = 'removed';
+        }
+
+        
+    </script>
+
+</body>
+</html>
